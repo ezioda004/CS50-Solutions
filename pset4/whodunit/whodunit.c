@@ -76,14 +76,14 @@ int main(int argc, char *argv[])
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
-            //The code I've added
-
-             if (triple.rgbtRed == 0xff){  //gets all the red and white pixels and turn them to white.
+            if (triple.rgbtRed == 0xff)  //gets all the red and white pixels and turn them to white.
+            {
                 triple.rgbtBlue = 0xff;
                 triple.rgbtGreen = 0xff;
                 triple.rgbtRed = 0xff;
             }
-            else if (triple.rgbtBlue == 0xff){ //gets all the other blue pixels (message) and turn them to red.
+            else if (triple.rgbtBlue == 0xff)  //gets all the other blue pixels (message) and turn them to red.
+            {
                 triple.rgbtBlue = 0x00;
                 triple.rgbtGreen = 0x00;
                 triple.rgbtRed = 0xff;
